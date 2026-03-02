@@ -83,3 +83,41 @@ Authenticates a user and returns a token.
 ### Notes
 - Ensure `Content-Type: application/json` header is set.
 - Passwords are securely compared on the server; do not send pre-hashed values.
+
+## GET /users/profile
+
+Retrieves the profile information of the authenticated user.
+
+### Response
+- **200 OK**: Successfully retrieved user profile.
+  ```json
+  {
+    "id": "12345",
+    "fullname": {
+      "firstname": "John",
+      "lastname": "Doe"
+    },
+    "email": "john.doe@example.com",
+    "createdAt": "2026-03-01T12:00:00Z"
+  }
+  ```
+- **401 Unauthorized**: Unauthorized access.
+
+### Notes
+- Ensure the user is authenticated by providing a valid token.
+
+## GET /users/logout
+
+Logs out the authenticated user by invalidating their session or token.
+
+### Response
+- **200 OK**: Successfully logged out.
+  ```json
+  {
+    "message": "Logged out successfully"
+  }
+  ```
+- **401 Unauthorized**: Unauthorized access.
+
+### Notes
+- Ensure the user is authenticated by providing a valid token.
