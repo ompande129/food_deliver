@@ -188,3 +188,50 @@ Creates a new captain account with the provided data. All fields are required an
 ### Notes
 - Ensure `Content-Type: application/json` header is set.
 - Passwords should be hashed by the server; do not send pre-hashed values.
+
+## GET /captains/profile
+
+Retrieves the profile information of the authenticated captain.
+
+### Response
+- **200 OK**: Successfully retrieved captain profile.
+  ```json
+  {
+    "captain": {
+      "id": "12345",
+      "fullname": {
+        "firstname": "John",
+        "lastname": "Doe"
+      },
+      "email": "john.doe@example.com",
+      "vehicle": {
+        "color": "Red",
+        "plate": "ABC123",
+        "capacity": 4,
+        "vehicleType": "car"
+      },
+      "status": "inactive",
+      "createdAt": "2026-03-03T12:00:00Z"
+    }
+  }
+  ```
+- **401 Unauthorized**: Unauthorized access.
+
+### Notes
+- Ensure the captain is authenticated by providing a valid token.
+
+## GET /captains/logout
+
+Logs out the authenticated captain by invalidating their session or token.
+
+### Response
+- **200 OK**: Successfully logged out.
+  ```json
+  {
+    "message": "Logged out successfully"
+  }
+  ```
+- **401 Unauthorized**: Unauthorized access.
+
+### Notes
+- Ensure the captain is authenticated by providing a valid token.
