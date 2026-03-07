@@ -1,22 +1,47 @@
-import React from "react";
 import { Link } from "react-router-dom";
 
 const Home = () => {
+    const submitHandler = () =>{
+
+    }
   return (
-    <div>
-      <div className="bg-cover bg-center bg-[url(https://images.unsplash.com/photo-1557404763-69708cd8b9ce?q=80&w=764&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)] h-screen pt-8 flex justify-between flex-col w-full">
-        
+    <div className="h-screen relative">
+      <img
+        className="w-16 absolute left-5 top-5"
+        src="https://upload.wikimedia.org/wikipedia/commons/c/cc/Uber_logo_2018.png"
+        alt=""
+      />
+
+      <div className="h-screen w-sceen">
+        {/* image for temporary use */}
         <img
-          className="w-16 ml-8"
-          src="https://upload.wikimedia.org/wikipedia/commons/c/cc/Uber_logo_2018.png"
+          className="h-full w-full objtect-cover"
+          src="https://miro.medium.com/v2/resize:fit:1400/0*gwMx05pqII5hbfmX.gif"
           alt=""
         />
+      </div>
 
-        <div className="bg-white pb-7 py-4 px-4">
-          <h2 className="text-3xl font-bold">Get Started with Uber</h2>
-          <Link to='/login' className=" flex item-center justify-center w-full bg-black text-white py-3 rounded mt-5">
-            Continue
-          </Link>
+      <div className="flex flex-col justify-end h-screen absolute top-0 w-full">
+        <div className="h-[30%] p-5 bg-white relative">
+          <h4 className="text-2xl font-semibold">Find a trip</h4>
+          <form onSubmit={(e)=>{
+            submitHandler(e)
+          }}>
+            <div className="line absolute h-16 w-1 top-[45%] left-10 bg-gray-700 rounded-full"></div>
+            <input
+              className="bg-[#eee] px-12 py-2 text-lg rounded-lg w-full mt-5"
+              type="text"
+              placeholder="Add a pick-up location"
+            />
+            <input
+              className="bg-[#eee] px-12 py-2 text-lg rounded-lg w-full mt-3"
+              type="text"
+              placeholder="Enter your destination"
+            />
+          </form>
+        </div>
+
+        <div className=" bg-red-500 h-0">
         </div>
       </div>
     </div>
