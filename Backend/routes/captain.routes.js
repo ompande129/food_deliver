@@ -7,7 +7,7 @@ const authMiddleware = require("../middlewares/auth.middleware");
 //  register route for captain
 router.post("/register", [
     body("email").notEmpty().withMessage("Email is required").isEmail().withMessage("Please use a valid email address"),
-    body("fullname.firstname").notEmpty().withMessage("First name is required").isLength({min : 3}).withMessage("First name must be at least 3 characters long"),
+    body("fullname.firstname").notEmpty().withMessage("First name is required").isLength({min : 2}).withMessage("First name must be at least 3 characters long"),
     body("password").notEmpty().withMessage("Password is required").isLength({min : 6}).withMessage("Password must be at least 6 characters long"),
     body("vehicle.color").notEmpty().withMessage("Vehicle color is required").isLength({min : 3}).withMessage("Color must be at least 3 characters long"),
     body("vehicle.plate").notEmpty().withMessage("Vehicle plate number is required").isLength({min : 3}).withMessage("Plate number must be at least 3 characters long"),    
